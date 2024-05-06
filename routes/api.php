@@ -16,23 +16,9 @@ Route::group(['prefix'=> 'user'], function () {
     Route::get('/products/{id}', [UserInterfaceController::class, 'getProductDetails']);
 
     Route::post('/order', [OrderController::class, 'createOrder']);
+    Route::get('/orders', [OrderController::class, 'getOrders']);
     Route::get('/order/{id}', [OrderController::class, 'getOrder']);
 
     Route::post('/order/items', [OrderController::class, 'addItemToOrder']);
-
-    /* TODO:
-    Műveletek
-    - PUT /order/product/{id} - Termék mennyiségének növelése/csökkentése
-    - DELETE /order/product/{id} - Termék törlése a rendelésből
-    Befejezés
-    - PUT /order - Megrendelés véglegesítése
-    */
 });
 
-Route::group(['prefix'=> 'admin'], function () {
-    // TODO
-});
-
-Route::group(['prefix'=> 'kitchen'], function () {
-    // TODO
-});

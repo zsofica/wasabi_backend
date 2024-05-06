@@ -28,6 +28,12 @@ class OrderController extends Controller
         return response()->json($response);
     }
 
+    public function getOrders(Request $request)
+    {
+        $orders = Order::all();
+        return response()->json($orders);
+    }
+
     public function addItemToOrder(Request $request)
     {
         $productId = $request->input('product_id');
